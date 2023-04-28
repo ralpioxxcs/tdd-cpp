@@ -4,8 +4,6 @@ class Foo {
 public:
     Foo() = default;
 
-    int GetSize() const;
-
-private:
-    int n{5};
+    virtual std::string DoThis(int n) = 0;
+    virtual int DoThat(std::string &str) = 0;
 };

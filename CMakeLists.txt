@@ -23,6 +23,7 @@ file(GLOB TEST_SRC_FILES ${PROJECT_SOURCE_DIR}/test/*.cc)
 add_executable(${PROJECT_NAME}_test ${TEST_SRC_FILES})
 target_include_directories(${PROJECT_NAME}_test PRIVATE 
     ${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR} 
+    ${gmock_SOURCE_DIR}/include ${gmock_SOURCE_DIR} 
     ${PROJECT_SOURCE_DIR})
-target_link_libraries(${PROJECT_NAME}_test PRIVATE ${PROJECT_NAME} gtest)
+target_link_libraries(${PROJECT_NAME}_test PRIVATE ${PROJECT_NAME} gtest gmock)
 add_test(unit-test ${PROJECT_NAME}_test)
