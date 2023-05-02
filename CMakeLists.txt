@@ -2,6 +2,9 @@ cmake_minimum_required(VERSION 3.10)
 
 # Project setup
 set(PROJECT_NAME tdd-cpp)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 project(${PROJECT_NAME})
 
 # Compiler flags
@@ -27,3 +30,4 @@ target_include_directories(${PROJECT_NAME}_test PRIVATE
     ${PROJECT_SOURCE_DIR})
 target_link_libraries(${PROJECT_NAME}_test PRIVATE ${PROJECT_NAME} gtest gmock)
 add_test(unit-test ${PROJECT_NAME}_test)
+
